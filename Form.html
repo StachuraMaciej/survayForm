@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Maciej Stachura">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        body {
+            background: url('green-grass.jpg') no-repeat top center;
+            background-size: cover;
+            height: 100vh;
+            color: white;
+        }
+
+
+        .wrapper {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            padding: 0 20px;
+
+        }
+
+        #header {
+            margin-bottom: 40px;
+        }
+
+        #survey-form {
+            max-width: 590px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 5px;
+            display: flex;
+            box-shadow: 0 0 10px black;
+        }
+
+        .input-fields {
+            display: flex;
+            flex-direction: column;
+
+
+        }
+
+        .input-fileds,
+        .msg {
+            width: 43%;
+            margin-top: 20px;
+        }
+
+        #name,
+        #email,
+        #number,
+        #dropdown,
+        .msg textarea {
+            margin: 10px 0 10px 10px;
+            background: transparent;
+            border: 0;
+            border-bottom: 2px solid #c5ecfd;
+            padding: 8px;
+            color: #c5ecfd;
+            width: 95%;
+        }
+
+        .msg textarea {
+            border: none;
+        }
+
+
+
+        option {
+            color: black;
+            width: 60%;
+        }
+
+        #submit {
+            margin: 15px 0 15px 0;
+            background: #0d730d;
+            border-style: none;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            transform: translateX(83%);
+        }
+
+        #submit:hover {
+            opacity: 0.8;
+        }
+
+        #gender {
+            display: inline;
+        }
+
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        form {
+            width: 300px;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        textarea {
+            resize: vertical;
+            max-height: 100px;
+
+
+        }
+
+        input,
+        textarea {
+            outline: none;
+            border: 1px solid #ddd;
+        }
+
+        input:focus,
+        textarea:focus {
+            box-shadow: 0 0 4px rgba(0, 128, 0, 0.5);
+            border: 1px solid rgb(0, 128, 0);
+        }
+
+        ::placeholder {
+
+            opacity: 1;
+        }
+
+        .info {
+            font-size: 10px;
+
+
+        }
+
+        #act {
+            transform: translateY(-135%);
+
+        }
+
+        /*color placecholdera*/
+
+        @media screen and (max-width: 600px) {
+            #survey-form {
+                flex-direction: column;
+            }
+            .input-fields {
+                width: 85%;
+            }
+            .msg {
+                width: 41%;
+                transform: translateX();
+            }
+            #dropdown {
+                width: 90%;
+            }
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <div id="header">
+            <h1 id="title">Survey Form</h1>
+            <p id="description">
+                freeCodeCamp
+            </p>
+        </div>
+        <form id="survey-form" method="post">
+
+            <div class="contact-form">
+
+                <div class="input-fields">
+                    <label id="name-label" for="name">Name:</label>
+                    <input autofocus id="name" type="text" name="name" placeholder="Enter your name" required>
+                    <label id="email-label" for="email"></label>E-mail:
+                    <input id="email" type="email" name="email" placeholder="Write your e-mail.." required>
+                    <label id="number-label" for="age">Age:</label>
+                    <input id="number" type="number" name="age" placeholder="Age" min="1" max="125">
+
+
+
+                </div>
+
+                <div class="msg">
+                    <textarea name=" message" placeholder="Write a message!"></textarea>
+                </div>
+
+                <div id="gender">
+                    Male <input type="radio" name="gender" value="Male"> Female<input type="radio" name="gender" value="Female">
+                </div>
+
+                <select id="dropdown" name="car">
+        <option value="none">None</option>
+        <option value="car1">Lorem</option>
+        <option value="car2">Lorem</option>
+        <option value="car3">Lorem</option>
+    </select>
+
+                <button id="submit" type="submit" name="submit">Submit</button>
+
+                <div>
+                    <label class="info" for="act">If you want get informations about new product  check the checkbox</label>
+                    <input id="act" type="checkbox" name="personality" value="loving">
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
